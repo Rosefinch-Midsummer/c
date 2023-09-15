@@ -3,8 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>C语言程序设计</title>
-        <meta name="robots" content="noindex" />
+        <title>ctype.h库函数 - C语言程序设计</title>
 
 
         <!-- Custom HTML head -->
@@ -84,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="前言.html"><strong aria-hidden="true">1.</strong> 前言</a></li><li class="chapter-item expanded "><a href="ctype.h库函数.html"><strong aria-hidden="true">2.</strong> ctype.h库函数</a></li><li class="chapter-item expanded "><a href="stdio.h库函数.html"><strong aria-hidden="true">3.</strong> stdio.h库函数</a></li><li class="chapter-item expanded "><a href="string.h库函数.html"><strong aria-hidden="true">4.</strong> string.h库函数</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="前言.html"><strong aria-hidden="true">1.</strong> 前言</a></li><li class="chapter-item expanded "><a href="ctype.h库函数.html" class="active"><strong aria-hidden="true">2.</strong> ctype.h库函数</a></li><li class="chapter-item expanded "><a href="stdio.h库函数.html"><strong aria-hidden="true">3.</strong> stdio.h库函数</a></li><li class="chapter-item expanded "><a href="string.h库函数.html"><strong aria-hidden="true">4.</strong> string.h库函数</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -167,33 +166,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="前言"><a class="header" href="#前言"># 前言</a></h1>
-<p>由ANSI制定的C标准库虽然不是C语言本身的构成部分，但是它支持标准C语言的实现，还提供该函数库中的函数声明、类型及宏定义。标准库中的函数及宏定义如下表所示：</p>
-<div class="table-wrapper"><table><thead><tr><th>函数</th><th>宏定义</th></tr></thead><tbody>
-<tr><td>alloc.h</td><td>动态地址分配函数</td></tr>
-<tr><td>assert.h</td><td>诊断函数</td></tr>
-<tr><td>float.h</td><td>定义从属于环境工具的浮点值</td></tr>
-<tr><td>math.h</td><td>数学函数</td></tr>
-<tr><td>stdarg.h</td><td>变长参数表</td></tr>
-<tr><td>stdlib.h</td><td>常用函数（动态内存分配、类型转换等）</td></tr>
-<tr><td>ctype.h</td><td>字符操作函数</td></tr>
-<tr><td>limits.h</td><td>定义从属于环境工具的各种限定</td></tr>
-<tr><td>setjmp.h</td><td>非局部跳转函数</td></tr>
-<tr><td>stddef.h</td><td>常用函数</td></tr>
-<tr><td>string.h</td><td>字符串函数</td></tr>
-<tr><td>errno.h</td><td>定义出错代码</td></tr>
-<tr><td>local.h</td><td>地区函数</td></tr>
-<tr><td>signal.h</td><td>信号函数</td></tr>
-<tr><td>stdio.h</td><td>标准的输入、输出函数</td></tr>
-<tr><td>time.h</td><td>日期与时间函数</td></tr>
-</tbody></table>
-</div>
-<p>如果要使用标准库中的函数，则需要用以下的方式包含库函数。</p>
-<pre><code class="language-c">#include&lt;库函数&gt;
-</code></pre>
-<p>虽然库函数的包含顺序是任意的，但是库函数必须被包含在任何外部声明或定义之外。</p>
-<p>注意：C++标准库也同样包含C标准库，但是所有C语言函数库的库函数之前都被冠以“c”，例如，C标准库中的库函数stdio.h在C++中变成cstdio。</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ctypeh库函数"><a class="header" href="#ctypeh库函数">ctype.h库函数</a></h1>
+                        <h1 id="ctypeh库函数"><a class="header" href="#ctypeh库函数">ctype.h库函数</a></h1>
 <p>ctype.h库函数主要包括一些字符处理函数。</p>
 <h2 id="一字符测试函数"><a class="header" href="#一字符测试函数">一、字符测试函数</a></h2>
 <h3 id="1isalnum函数判断是否是英文字母或数字字符"><a class="header" href="#1isalnum函数判断是否是英文字母或数字字符">1.isalnum函数——判断是否是英文字母或数字字符</a></h3>
@@ -373,14 +346,18 @@ ASCII码为85
 Process returned 0 (0x0)   execution time : 20.731 s
 Press any key to continue.
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="stdioh库函数"><a class="header" href="#stdioh库函数">stdio.h库函数</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="stringh库函数"><a class="header" href="#stringh库函数">string.h库函数</a></h1>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="前言.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
 
+                            <a rel="next" href="stdio.h库函数.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -388,7 +365,13 @@ Press any key to continue.
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="前言.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
 
+                    <a rel="next" href="stdio.h库函数.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
@@ -411,11 +394,6 @@ Press any key to continue.
 
         <!-- Custom JS scripts -->
 
-        <script>
-        window.addEventListener('load', function() {
-            window.setTimeout(window.print, 100);
-        });
-        </script>
 
     </div>
     </body>
