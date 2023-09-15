@@ -195,6 +195,30 @@
 <p>注意：C++标准库也同样包含C标准库，但是所有C语言函数库的库函数之前都被冠以“c”，例如，C标准库中的库函数stdio.h在C++中变成cstdio。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ctypeh库函数"><a class="header" href="#ctypeh库函数">ctype.h库函数</a></h1>
 <p>ctype.h库函数主要包括一些字符处理函数。</p>
+<ul>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#%E4%B8%80%E5%AD%97%E7%AC%A6%E6%B5%8B%E8%AF%95%E5%87%BD%E6%95%B0">一、字符测试函数</a>
+<ul>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#1isalnum%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AF%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D%E6%88%96%E6%95%B0%E5%AD%97%E5%AD%97%E7%AC%A6">1.isalnum函数——判断是否是英文字母或数字字符</a></li>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#2isalpha%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D">2.isalpha函数——判断是否为英文字母</a></li>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#3isascii%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%ADascii%E7%A0%81%E6%98%AF%E5%90%A6%E4%BD%8D%E4%BA%8E0127">3.isascii函数——判断ASCII码是否位于0~127</a></li>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#4iscntrl%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E6%8E%A7%E5%88%B6%E5%AD%97%E7%AC%A6">4.iscntrl函数——判断是否为控制字符</a></li>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#5isdigit%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E6%95%B0%E5%AD%97%E5%AD%97%E7%AC%A6">5.isdigit函数——判断是否为数字字符</a></li>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#6isgraph%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E5%8F%AF%E6%89%93%E5%8D%B0%E5%AD%97%E7%AC%A6%E4%B8%8D%E5%8C%85%E6%8B%AC%E7%A9%BA%E6%A0%BC">6.isgraph函数——判断是否为可打印字符（不包括空格）</a></li>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#7islower%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E5%B0%8F%E5%86%99%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D">7.islower函数——判断是否为小写英文字母</a></li>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#8isprint%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E5%8F%AF%E6%89%93%E5%8D%B0%E5%AD%97%E7%AC%A6%E5%8C%85%E6%8B%AC%E7%A9%BA%E6%A0%BC">8.isprint函数——判断是否为可打印字符（包括空格）</a></li>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#9ispunct%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E6%A0%87%E7%82%B9%E7%AC%A6%E5%8F%B7">9.ispunct函数——判断是否为标点符号</a></li>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#10isspace%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E4%B8%BA%E7%A9%BA%E7%99%BD%E5%AD%97%E7%AC%A6">10.isspace函数——判断是否为空白字符</a></li>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#11isxdigit%E5%87%BD%E6%95%B0%E5%88%A4%E6%96%AD%E6%98%AF%E5%90%A6%E6%98%AF%E5%8D%81%E5%85%AD%E8%BF%9B%E5%88%B6%E5%AD%97%E7%AC%A6">11.isxdigit函数——判断是否是十六进制字符</a></li>
+</ul>
+</li>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#%E4%BA%8C%E5%AD%97%E7%AC%A6%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0">二、字符转换函数</a>
+<ul>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#1tolower%E5%87%BD%E6%95%B0%E5%B0%86%E5%A4%A7%E5%86%99%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D%E8%BD%AC%E6%8D%A2%E6%88%90%E5%B0%8F%E5%86%99%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D">1.tolower函数——将大写英文字母转换成小写英文字母</a></li>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#2toupper%E5%87%BD%E6%95%B0%E5%B0%86%E5%B0%8F%E5%86%99%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D%E8%BD%AC%E6%8D%A2%E6%88%90%E5%A4%A7%E5%86%99%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D">2.toupper函数——将小写英文字母转换成大写英文字母</a></li>
+<li><a href="ctype.h%E5%BA%93%E5%87%BD%E6%95%B0.html#3toascii%E5%87%BD%E6%95%B0%E5%B0%86%E5%AD%97%E7%AC%A6%E8%BD%AC%E6%8D%A2%E6%88%90ascii%E7%A0%81">3.toascii函数——将字符转换成ASCII码</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="一字符测试函数"><a class="header" href="#一字符测试函数">一、字符测试函数</a></h2>
 <h3 id="1isalnum函数判断是否是英文字母或数字字符"><a class="header" href="#1isalnum函数判断是否是英文字母或数字字符">1.isalnum函数——判断是否是英文字母或数字字符</a></h3>
 <p>函数原型：<code>int isalnum(int ch);</code></p>
