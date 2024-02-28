@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="light" dir="ltr">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
@@ -10,7 +10,7 @@
         
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
@@ -31,7 +31,7 @@
         <!-- Custom theme stylesheets -->
 
     </head>
-    <body>
+    <body class="sidebar-visible no-js">
     <div id="body-container">
         <!-- Provide site root to javascript -->
         <script>
@@ -61,31 +61,38 @@
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
-            html.classList.remove('no-js')
             html.classList.remove('light')
             html.classList.add(theme);
-            html.classList.add('js');
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
         </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var html = document.querySelector('html');
+            var body = document.querySelector('body');
             var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
             }
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
                 <ol class="chapter"><li class="chapter-item expanded "><a href="前言.html"><strong aria-hidden="true">1.</strong> 前言</a></li><li class="chapter-item expanded "><a href="ctype.h库函数.html" class="active"><strong aria-hidden="true">2.</strong> ctype.h库函数</a></li><li class="chapter-item expanded "><a href="stdio.h库函数.html"><strong aria-hidden="true">3.</strong> stdio.h库函数</a></li><li class="chapter-item expanded "><a href="string.h库函数.html"><strong aria-hidden="true">4.</strong> string.h库函数</a></li></ol>
             </div>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
         </nav>
 
         <!-- Track and set sidebar scroll position -->
@@ -116,9 +123,9 @@
                                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
                             <i class="fa fa-bars"></i>
-                        </button>
+                        </label>
                         <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
                             <i class="fa fa-paint-brush"></i>
                         </button>
@@ -200,7 +207,7 @@
 <p>函数原型：<code>int isalpha(int ch);</code></p>
 <h3 id="3isascii函数判断ascii码是否位于0127"><a class="header" href="#3isascii函数判断ascii码是否位于0127">3.isascii函数——判断ASCII码是否位于0~127</a></h3>
 <p>函数原型：<code>int isalpha(int ch);</code></p>
-<p>比如：<code>printf(&quot;%c%s是一个ASCII字符\n&quot;,str[i],(isascii(str[i]))?&quot;&quot;:&quot;不&quot;);</code></p>
+<p>比如：<code>printf("%c%s是一个ASCII字符\n",str[i],(isascii(str[i]))?"":"不");</code></p>
 <h3 id="4iscntrl函数判断是否为控制字符"><a class="header" href="#4iscntrl函数判断是否为控制字符">4.iscntrl函数——判断是否为控制字符</a></h3>
 <p>函数原型：<code>int iscntrl(int ch);</code></p>
 <p>该函数的功能是判断ch是否是控制字符，即ASCII码是否位于0x00(NOL)~0x1f(VS)或等于0x7f（Delete键的ASCII码）。</p>
@@ -211,12 +218,12 @@ void main()
 {
     int c;
     c='a';
-    printf(&quot;'%c'%s\n&quot;,c,iscntrl(c)?&quot;是控制字符&quot;:&quot;不是控制字符&quot;);
+    printf("'%c'%s\n",c,iscntrl(c)?"是控制字符":"不是控制字符");
     c=13;
-    printf(&quot;ASCII码为%x的字符%s\n&quot;,c,iscntrl(c)?&quot;是控制字符&quot;:&quot;不是控制字符&quot;);
+    printf("ASCII码为%x的字符%s\n",c,iscntrl(c)?"是控制字符":"不是控制字符");
     c=0x7f;
-    printf(&quot;ASCII码为%x的字符%s\n&quot;,c,iscntrl(c)?&quot;是控制字符&quot;:&quot;不是控制字符&quot;);
-    system(&quot;pause&quot;);
+    printf("ASCII码为%x的字符%s\n",c,iscntrl(c)?"是控制字符":"不是控制字符");
+    system("pause");
 }
 </code></pre>
 <pre><code>'a'不是控制字符
@@ -239,7 +246,7 @@ ASCII码为7f的字符是控制字符
 int main()
 {
     int i=0;
-    char str[]=&quot;Welcome to you!\nWelcome to Chungkuo!\n&quot;;
+    char str[]="Welcome to you!\nWelcome to Chungkuo!\n";
     while(isprint(str[i]))
     {
         putchar(str[i]);
@@ -260,8 +267,8 @@ Press any key to continue.
 #include &lt;stdlib.h&gt;
 int main()
 {
-    char str1[]=&quot;How are you, Mr Liu!&quot;;
-    char str2[]=&quot;Mobile interface development, system analyst, algorithm design!&quot;;
+    char str1[]="How are you, Mr Liu!";
+    char str2[]="Mobile interface development, system analyst, algorithm design!";
     int i=0,count=0;
     char *p;
 
@@ -271,7 +278,7 @@ int main()
             count++;
         i++;
     }
-    printf(&quot;字符串%s包含%d个标点符号.\n&quot;,str1,count);
+    printf("字符串%s包含%d个标点符号.\n",str1,count);
     p=str2;
     count=0;
     while(*p!='\0')
@@ -280,7 +287,7 @@ int main()
             count++;
         p++;
     }
-    printf(&quot;字符串%s包含%d个标点符号.\n&quot;,str2,count);
+    printf("字符串%s包含%d个标点符号.\n",str2,count);
     return 0;
 }
 </code></pre>
@@ -306,7 +313,7 @@ int main()
 #include &lt;string.h&gt;
 int main()
 {
-    char str[3][10]={&quot;2FE9H&quot;,&quot;3EC7&quot;,&quot;X48A&quot;};
+    char str[3][10]={"2FE9H","3EC7","X48A"};
     int i,k,len;
     for(k=0;k&lt;3;k++)
     {
@@ -317,9 +324,9 @@ int main()
             else
                 break;
         if(i&gt;=len)
-            printf(&quot;%s是十六进制对应的字符\n&quot;,str[k]);
+            printf("%s是十六进制对应的字符\n",str[k]);
         else
-            printf(&quot;%s不是十六进制对应的字符\n&quot;,str[k]);
+            printf("%s不是十六进制对应的字符\n",str[k]);
     }
     return 0;
 }
@@ -344,12 +351,12 @@ int main()
     char ch;
     while(1)
     {
-        printf(&quot;请输入一个字符（输入q终止程序）：&quot;);
+        printf("请输入一个字符（输入q终止程序）：");
         ch=getchar();
         if(ch=='q')
             break;
         if(ch!=10)
-            printf(&quot;ASCII码为%d\n&quot;,toascii(ch));
+            printf("ASCII码为%d\n",toascii(ch));
         getchar();
     }
     return 0;
@@ -379,7 +386,7 @@ Press any key to continue.
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="stdio.h库函数.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="stdio.h库函数.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -393,7 +400,7 @@ Press any key to continue.
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="stdio.h库函数.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="stdio.h库函数.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
